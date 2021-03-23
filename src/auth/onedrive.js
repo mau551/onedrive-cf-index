@@ -1,5 +1,17 @@
 import config from '../config/default'
+// ./src/auth/onedrive.js
 
+// ...
+export async function getAccessToken() {
+  const timestamp = () => {
+    return Math.floor(Date.now() / 1000)
+  }
+
+  const refresh_token = await BUCKET.get('refresh_token')
+
+  // 之后所有的 config.refresh_token 都直接改为 refresh_token
+  // ...
+}
 /**
  * Get access token for microsoft graph API endpoints. Refresh token if needed.
  */
